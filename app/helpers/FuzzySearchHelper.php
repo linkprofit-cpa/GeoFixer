@@ -94,7 +94,7 @@ class FuzzySearchHelper
     private function strictWordsLevenshteinHandlerCallback($translit, $russian, $word)
     {
         if (levenshtein(metaphone($word), metaphone($translit)) < mb_strlen(metaphone($word)) / 2) {
-            if (levenshtein($word, $translit) < mb_strlen($word) / 2) {
+            if (levenshtein($word, $translit) < mb_strlen($word) / 3) {
                 $this->words_array[$russian] = $translit;
             }
         }
